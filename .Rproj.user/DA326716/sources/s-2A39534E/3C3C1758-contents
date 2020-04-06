@@ -147,7 +147,9 @@ save(commit,listexample,file="today.Rda")
 
 ```
 
-
+```{r}
+load("today.Rda")
+```
 
 
 
