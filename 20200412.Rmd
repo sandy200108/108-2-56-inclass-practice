@@ -127,15 +127,6 @@ vectorExample
 vectorExample[c(1,3)]
 vectorExample[c(3,2,1)] # 產生重新排列效果
 ```
-```{r}
-# 顯示到第一層
-str(listExample, max.level=1)
-
-str(listExample[c(2,1)],max.level = 1)
-```
-
-
-
 
 
 
