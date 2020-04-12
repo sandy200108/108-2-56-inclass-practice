@@ -246,6 +246,16 @@ names[econOnly][econFemaleOnly]
 
 
 ```{r}
+str(get1)
+get1[[1]][[1]][[2]]
+
+```
+
+```{r}
+str(get2)
+get2[[1]][[1]][[1]][[2]]
+
+```
 
 
 
