@@ -74,3 +74,47 @@ length(tainanSportsMap)
 tainanSportsMap[[1]]
 tainanSportsMap[[1076]]
 ```
+
+# 有多少名字可選：
+```{r}
+names(listExample)
+```
+```{r}
+listExample$student
+listExample$`學期` # 特殊命名依然要用反頓點呼叫
+```
+```{r}
+str(listExample)
+```
+```{r}
+str(listExample$`學期`)
+```
+```{r}
+listExample[["student"]]
+listExample$student
+
+listExample[["學期"]] # 小心不是反頓點喔。
+listExample$`學期`
+```
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
