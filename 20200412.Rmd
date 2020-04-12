@@ -174,12 +174,32 @@ names(taipeiNightMarkets)
 ```{r}
 str(taipeiNightMarkets[c(T,F,F,F,T,F,F,F,F,T,F,F,F,T)],max.level = 1)
 ```
+```{r}
+c(T,F,F,F,T,F,F,F,F,T,F,F,F,T) ->selectedmarkets
+taipeiNightMarkets[selectedmarkets]
+```
 
 
+```{r}
+selectedmarkets<-rep(F,14)#repeat F by 14 times
+print(selectedmarkets)
+selectedmarkets[c(1,5,10,14)]<-TRUE
+print(selectedmarkets)
+```
+```{r}
 
+str(taipeiNightMarkets[selectedmarkets],max.level = 1)
 
+```
 
+```{r}
+str(listExample,max.level = 3)
+```
 
+```{r}
+get1 <- listExample[["學期"]]
+get2 <- listExample["學期"]
+```
 
 
 
