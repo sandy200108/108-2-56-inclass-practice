@@ -88,4 +88,43 @@ get2_layer3<-get2_layer2[[1]]
 get2_layer3$teacher
 ```
 
+```{r}
+listExample["學期"][[1]][["108-1"]][[1]]$teacher
+```
+
+
+
+
+
+#list應用
+```{r}
+vector1<-c(a=1,b=3,c=4)
+vector1[["a"]]
+vector1[c("a","c")]
+
+
+list1<-list(a=1,b=3,c=4)
+list1[["a"]]
+list1[c("a","c")]
+list1$a
+```
+
+
+今明兩日台北市、新北市氣溫:
+```{R}
+today <- list(
+  list("台北市",
+       highest_temp=c(highest_temp = 25),
+       lowest_temp=c(lowest_temp = 18)),
+  list("新北市",
+       highest_temp=c(highest_temp = 24),
+       lowest_temp=c(lowest_temp = 15)))
+str(today)
+```
+
+```{r}
+today[[1]]$highest_temp
+```
+
+
 
