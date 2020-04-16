@@ -162,10 +162,16 @@ list1[[1]][-c(3)]->list1[[1]]
 str(list1)
 ```
 
+```{r}
+list1[[2]][-c(3,5)]->list1[[2]]
+str(list1)
+```
 
-
-
-
+```{r}
+str(list1)
+list1[[2]][c(1,2)] <- NULL
+str(list1)
+```
 
 
 
