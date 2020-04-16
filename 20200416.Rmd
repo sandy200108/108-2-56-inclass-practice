@@ -80,10 +80,51 @@ list1[[1]]$status[["height"]]<-176
 str(list1)
 ```
 
+```{r}
+list1[[1]][["age"]] <- 21
+list1[[2]]["age"] <- list(21)
 
+# 改變「一個」時，使用[[ ]]比較不會錯。
+str(list1)
+```
 
+```{R}
+list1[[1]][c("bloodType","registered")] <- list("AB",TRUE)
 
+str(list1)
+```
 
+```{r}
+listExample <- 
+  list(
+    student="小明",
+    `學期`=list(
+      `108-1`=list(
+        list(
+          name="個體經濟學",
+          teacher="Alice",
+          grade=85
+        )
+      ),
+      `108-2`=list(
+        list(
+          name="總體經濟學",
+          teacher="Mark",
+          grade=78
+        )
+      )
+    )
+  )
+# 有多少位置可選：
+length(listExample)
+```
 
+```{r}
+listExample[[2]][[1]][[2]]<-list(name="產業經濟學")
+str(listExample)
+
+listExample[[2]][[1]][[2]][c("teacher","grade")]<-list("Wen",88)
+str(listExample)
+```
 
 
