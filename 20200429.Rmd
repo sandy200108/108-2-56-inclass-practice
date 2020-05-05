@@ -301,11 +301,29 @@ jsonlite::fromJSON("https://data.ntpc.gov.tw/od/data/api/EDC3AD26-8AE7-4916-A00B
   garbageRoutes
 ```
 
+```{r}
+#  1 用typeof()函數查詢電腦實質上如何看待garbageRoutes。
+typeof(garbageRoutes)  
+#  2 用class()函數查詢電腦把它能進行的操作運算歸屬於哪一類型。
+class(garbageRoutes)
+```
+```{r}
+# 由linename元素判斷垃圾車有幾條路線。
+factor(garbageRoutes$linename) -> garbageRoutes$linename
+levels(garbageRoutes$linename)
+  
+# 由linename創造： 可篩選出下午路線的「要/不要」向量pick_afternoonRoutes。
+pick_afternoonRoutes <-
+  stringr::str_detect(
+    garbageRoutes$linename,
+    "下午"
+  )
+garbageRoutes$linename[pick_afternoonRoutes]
+```
 
-
-
-
-
+```{r}
+?str_detect
+```
 
 
 
