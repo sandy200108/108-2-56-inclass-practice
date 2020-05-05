@@ -235,6 +235,69 @@ y <- c(5,8)
 x %in% y
 ```
 
+```{r}
+print(example[c("name","residence")])
+
+set_TaipeiMetro <- c("Taipei","New Taipei")
+pick_fromTaipeiMetro <- example$residence %in% set_TaipeiMetro
+example$name[pick_fromTaipeiMetro]
+```
+
+```{r}
+str(transcript100to103)
+```
+
+```{r}
+set_LawBusiness<-c("法學院","商學院")
+pick_lawBusiness<-
+  transcript100to103$學院%in%set_LawBusiness
+pick_lawBusiness
+```
+```{r}
+pick_not_fromTaipeiMetro <- ! pick_fromTaipeiMetro
+# 或
+pick_not_fromTaipeiMetro <- !(example$residence %in% set_TaipeiMetro) # (..) 裡面會先運算完才做外面!的處理
+```
+```{r}
+print(example[c("name","residence")])
+
+example$name[pick_fromTaipeiMetro]
+example$name[pick_not_fromTaipeiMetro]
+```
+
+```{r}
+x2 <- c(1,NA,10)
+y2 <- c(-1,NA,20)
+
+x3 <- c(NA,"小花")
+y3 <- c(NA,"小華")
+```
+
+```{r}
+x2
+is.na(x2)
+```
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
