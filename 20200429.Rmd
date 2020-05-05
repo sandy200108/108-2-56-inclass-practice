@@ -213,11 +213,27 @@ example$allowance <-
 ```
 
 
+```{r}
+print(example[c("name","bloodType")])
 
+pick_bloodB <- example$bloodType == "B"
+example$name[pick_bloodB]
+```
 
+```{r}
+sequenceNums <- c(11, 6, 8, 11, 12, 11, 3, 7, 10, 8)
 
+pick_evens <- (sequenceNums %% 2) == 0
+sequenceNums[pick_evens]
+```
 
+```{r}
+x <- c(1,5,8)
+y <- c(5,8)
 
+# x裡的元素值是不是屬於y集合
+x %in% y
+```
 
 
 
