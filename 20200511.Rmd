@@ -122,8 +122,24 @@ str_view_all(heartSutra,"色") # 檢視
 str_count(heartSutra,"色") # 計數
 ```
 
+```{r}
+studentIds <- c("410873029","410773005","410772035","410562123")
+# 取出學號中的入學屆為107或108
+str_view_all(studentIds,"(107|108)")
 
+str_view_all(studentIds, "107|108") # 可不寫()
 
+# 是否來自107或108學屆
+str_detect(studentIds, "107|108")
+```
+```{r}
+Ids <- c("A283743192","B829103720","A10920402","C291022384")
+
+str_view_all(Ids, "[AC]")
+str_detect(Ids, "[AC]") # 偵測 出現A、C
+
+str_extract(Ids,"[A-Z]") # 取出 A-Z的字元
+```
 
 
 
