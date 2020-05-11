@@ -54,6 +54,74 @@ pick_fromTaipeiMetro <-
   example$residence %in% set_TaipeiMetro
 
 ```
+```{r}
+str(example[c("name","hobby","bloodType")])
+
+example$name[
+    pick_loveFood & pick_bloodB
+  ]
+```
+
+```{r}
+example[c("name","birthday","residence")]
+
+example$name[
+  pick_after98 | !pick_fromTaipeiMetro
+]
+```
+
+```{r}
+example$name[
+  pick_after98 & pick_fromTaipeiMetro & pick_bloodB
+]
+```
+
+```{r}
+library(stringr)
+library(glue)
+```
+
+```{r}
+str_sub("410873002", 5, 6)
+str_sub(c("410873299","410552103"),5,6)
+```
+
+```{r}
+lubridate::ymd(
+  c("民國108年12月5日","民國98年10月5日")
+)
+```
+
+```{r}
+lubridate::ymd(
+  c(
+    "民國2019年12月05日",
+    "馬丁2019的12課05muydifícil",
+    "助教2019Emily12解說05真棒",
+    "2019R12課程05すごい",
+    "R程式2019的12期中考05とても変態"
+  )
+)
+```
+
+```{r}
+str_extract_all(
+  c("民國108年12月5日","民國98年10月5日"),
+  "(?<=民國)[0-9]{2,3}(?=年)"
+) # 回傳list 
+
+str_extract(
+  c("民國108年12月5日","民國98年10月5日"),
+  "(?<=民國)[0-9]{2,3}(?=年)"
+) # 回傳vector 
+```
+
+```{r}
+heartSutra <- c("舍利子，色不異空，空不異色；色即是空，空即是色。")
+str_view_all(heartSutra,"色") # 檢視
+str_count(heartSutra,"色") # 計數
+```
+
 
 
 
