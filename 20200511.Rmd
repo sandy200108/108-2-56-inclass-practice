@@ -163,6 +163,27 @@ str_detect(
   pattern=myRegexSlotMachine
 )
 ```
+```{r}
+headline <- "資科系的謝陳官乃飛鳶書院三大名師，其中謝無雙的策略運算，陳大器的數理資科學，及官求敗的運算成本更是打通演算思維任督二脈的三大好課。書院目前有陳一、陳二、陳三四這三名學生。"
+```
+
+```{r}
+# 顯示所有符合規則的
+str_view_all(headline, "謝陳官") # 固定字組
+str_count(headline,"謝陳官")
+
+str_view_all(headline, "[謝陳官]") # 有1個strip: 出象有3個可能字元 
+str_count(headline, "[謝陳官]")
+
+str_view_all(headline, "謝無雙|官求敗") # 有1個strip，出象有2個字組 
+str_count(headline, "謝無雙|官求敗")
+
+str_view_all(headline, "陳[^官]") # 固定字元＋有1個strip： 出象為排官的字元
+str_count(headline, "陳[^官]")
+```
+
+
+
 
 
 
