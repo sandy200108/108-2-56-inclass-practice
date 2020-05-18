@@ -257,8 +257,22 @@ levels(factor2)
 factor2[[6]] <- "差"
 factor2
 ```
+```{r}
+# non factor
+char1 <- c("小明","小美")
+char2 <- c("大雄","技安")
+c(char1, char2)
 
+# factor
+factor1 <- factor(c("好", "壞", "壞"))
+factor2 <- factor(c("壞", "好", "好"))
+c(factor1, factor2)
+```
 
+```{r}
+factor1[4:6] <- factor2
+factor1
+```
 
 
 
