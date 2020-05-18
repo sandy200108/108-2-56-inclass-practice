@@ -103,7 +103,53 @@ jsonlite::fromJSON(
 unlist(population) -> population
 ```
 
+```{r}
+print(population)
+class(population) # 判斷出是named integer vector
+names(population) # 元素名稱是台灣各縣市
+population[["新北市"]]
+```
+```{r}
+levels(covid19$`縣市`) # 是名稱字串向量
 
+# 由於population元素值有names，可以用`[名稱字串向量]`取出所要的
+levels(covid19$`縣市`) -> levelsInData
+population[levelsInData] -> population
+```
+```{r}
+population <- sort(population, decreasing=T)
+population
+```
+```{r}
+newLevels <- names(population)
+newLevels
+```
+```{r}
+covid19$`縣市` <-
+  factor(
+    covid19$`縣市`, levels=newLevels
+  )
+
+levels(covid19$`縣市`)
+```
+
+```{r}
+levels(covid19$`年齡層`)
+```
+
+```{r}
+level_names <- levels(covid19$`年齡層`)
+startingAges <- stringr::str_extract(
+  level_names,
+  "^[0-9]+" # regex：開頭的一串數字
+)
+```
+
+```{r}
+# 要numerical class排的才一定對
+startingAges <- as.integer(startingAges)
+names(startingAges) <- level_names
+```
 
 
 
