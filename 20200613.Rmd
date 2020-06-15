@@ -337,3 +337,17 @@ pick_78 <- examSubmissionTime$section=="78"
 mean(examSubmissionTime$howEarly[pick_78])
 median(examSubmissionTime$howEarly[pick_78])
 ```
+
+```{r}
+library(magrittr)
+list_howEarly %>%
+  unlist() -> examSubmissionTime$howEarly
+
+pick_56 <- examSubmissionTime$section=="56"
+mean(examSubmissionTime$howEarly[pick_56])
+median(examSubmissionTime$howEarly[pick_56])
+
+pick_78 <- examSubmissionTime$section=="78"
+mean(examSubmissionTime$howEarly[pick_78])
+median(examSubmissionTime$howEarly[pick_78])
+```
