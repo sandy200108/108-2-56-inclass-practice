@@ -351,3 +351,56 @@ pick_78 <- examSubmissionTime$section=="78"
 mean(examSubmissionTime$howEarly[pick_78])
 median(examSubmissionTime$howEarly[pick_78])
 ```
+
+```{r}
+if(condition A){
+  body for A 
+} else if(condition B){
+  body for B
+} else if(condition C){
+  body for C
+} else {
+  body for none of the above
+}
+```
+```{R}
+readline("請輸入你的成績（整數）： ") -> grade # 單獨執行
+```
+
+```{R}
+if(grade >=90){
+  print("優")
+} else if(grade>=80 & grade<=89){
+  print("良")
+} else if(grade>=70 & grade<=79){
+  print("尚可")
+} else {
+  print("待加強")
+}
+```
+
+```{R}
+grade <- 80
+if(grade >=90){
+  print("優")
+} else if(grade>=75 & grade<=89){
+  print("良")
+} else if(grade>=70 & grade<=85){
+  print("尚可")
+} else {
+  print("待加強")
+}
+```
+
+```{r}
+grade <- 80
+if(grade >=90){
+  print("優")
+} else if(grade>=70 & grade<=85){
+  print("尚可")
+} else if(grade>=75 & grade<=89){
+  print("良")
+} else {
+  print("待加強")
+}
+```
