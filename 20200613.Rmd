@@ -113,21 +113,29 @@ convert_TaiwanDate2WesternDate <- function(twDate){
 ```
 
 ```{R}
-# 測試
-check_package("clipr")
-check_package("SOAR")
+library(clipr)
 ```
 
 ```{R}
-# 測試
-check_packages(c("clipr","SOAR"))
+# 檢視步驟耗時elapse time
+system.time(
+  jsonlite::fromJSON("https://opendata.cwb.gov.tw/fileapi/v1/opendataapi/F-C0032-001?Authorization=rdec-key-123-45678-011121314&format=JSON") ->
+  weather_next36hours
+)
 ```
 
+```{R}
+if(!exists("weather_next36hours")){
+    jsonlite::fromJSON("https://opendata.cwb.gov.tw/fileapi/v1/opendataapi/F-C0032-001?Authorization=rdec-key-123-45678-011121314&format=JSON") ->
+    weather_next36hours
+  SOAR::Store(weather_next36hours) # 存在.R_cache environment中
+}
+```
 
+```{R}
+rm(weather_next36hours)
 
-
-
-
+```
 
 
 
