@@ -215,3 +215,72 @@ if (myAnswer == correctAnswer) {
     print("你答對了")
 }
 ```
+
+```{r}
+Sys.setenv(`_R_CHECK_LENGTH_1_CONDITION_` = "true")
+```
+
+```{r}
+myAnswer <- c(2, 3, 6)
+correctAnswer <- c(2, 3, 5)
+
+if (all(myAnswer == correctAnswer)) {
+    # 要全TRUE
+    print("你答對了")
+}
+```
+
+```{r}
+if (any(myAnswer == correctAnswer)) {
+    # 只要有一個TRUE
+    print("裡頭有數字是對的")
+}
+```
+
+```{r}
+myAnswer <- c(1, 2, 3)
+correctAnswer <- factor(c(1, 2, 3))
+
+if (is.factor(myAnswer) && all(myAnswer == correctAnswer)) {
+    print("答對了")
+    10
+} else myGrade <- {
+    print("答錯了")
+    0
+}
+myGrade
+```
+
+```{r}
+if (is.factor(myAnswer) & all(myAnswer == correctAnswer)) {
+    print("答對了")
+    10
+} else myGrade <- {
+    print("答錯了")
+    0
+}
+myGrade
+```
+```{R}
+myAge <- 40
+myChildrenNumber <- 5
+
+if (myAge >= 65 | myChildrenNumber > 3) {
+    "符合申請資格"
+} else {
+    warning("不符合申請資格")
+}
+
+if (myAge >= 65 || myChildrenNumber > 3) {
+    "符合申請資格"
+} else {
+    warning("不符合申請資格")
+}
+```
+
+```{r}
+myAge <- 67
+myChildrenNumber <- 5
+```
+
+```{r}
