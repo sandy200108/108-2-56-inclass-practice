@@ -141,7 +141,8 @@ letterGrade<- switch(as.character(grade[[1]]),
 ```
 
 ```{R}
-nowtime <- glue::glue("{today()} 18:00:00") %>% ymd_hms(tz = "Asia/Taipei")
+nowtime <- glue::glue("{today()} 18:00:00")%>% 
+ymd_hms(tz = "Asia/Taipei")
 
 library(lubridate)
 library(glue)
